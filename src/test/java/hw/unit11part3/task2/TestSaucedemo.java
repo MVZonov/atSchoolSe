@@ -23,7 +23,7 @@ public class TestSaucedemo {
         driver.get(LoginPage.saucedemoUrl);
 
         //Действия на главной странице
-        LoginPage loginPage = new LoginPage();
+        LoginPage loginPage = new LoginPage(driver);
         PageFactory.initElements(driver, loginPage);
         Assertions.assertEquals("Swag Labs", loginPage.siteHeader.getText(), "Заголовок \"Swag Labs\" не совпадает.");
         loginPage.usernameField.sendKeys("standard_user");
@@ -42,7 +42,7 @@ public class TestSaucedemo {
         productsPage.logoutLink.click();
 
         //Завершающие действия на главной странице
-        LoginPage loginPage1 = new LoginPage();
+        LoginPage loginPage1 = new LoginPage(driver);
         PageFactory.initElements(driver, loginPage1);
         Assertions.assertEquals("Swag Labs", loginPage1.siteHeader.getText(), "Заголовок \"Swag Labs\" не совпадает.");
 

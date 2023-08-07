@@ -1,8 +1,10 @@
 package hw.unit11part3.task2;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
     public static final String saucedemoUrl = "https://www.saucedemo.com/";
@@ -17,4 +19,8 @@ public class LoginPage {
     WebElement passField;
     @FindBy(how = How.XPATH, using = "//input[@id='login-button']")
     WebElement loginButton;
+
+    public LoginPage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
 }

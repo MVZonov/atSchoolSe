@@ -26,7 +26,7 @@ public class TestHerokuapp {
         driver.get(HomePage.herokuappUrl);
 
         //Действия на главной странице
-        HomePage homePage = new HomePage();
+        HomePage homePage = new HomePage(driver);
         PageFactory.initElements(driver, homePage);
         Assertions.assertEquals(true, homePage.header.getText().contains("Dynamically Loaded Page Elements"), "Заголовок \"Dynamically Loaded Page Elements\" не совпадает.");
 

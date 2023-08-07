@@ -1,8 +1,10 @@
 package hw.unit11part3.task4;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class HomePage {
     public static final String herokuappUrl = "https://the-internet.herokuapp.com/dynamic_loading/1";
@@ -14,4 +16,8 @@ public class HomePage {
 
     @FindBy(how = How.XPATH, using = "//button[.='Start']")
     WebElement startButton;
+
+    public HomePage(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
 }
